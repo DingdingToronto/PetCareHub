@@ -1,0 +1,69 @@
+﻿@model IEnumerable<PetCareHub.Models.Pet>
+@{
+    ViewBag.Title = "List";
+}
+
+<style>
+    body {
+        background-color: LavenderBlush;
+        font-family: Arial, sans-serif;
+    }
+
+    .card {
+        width: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        display: inline-block;
+        vertical-align: top;
+        background-color: cyan;
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card h2 {
+        margin-top: 0;
+        color: DarkSlateGray;
+        font-size: 24px;
+    }
+
+    .card div {
+        margin-bottom: 10px;
+        color: DimGray;
+        font-size: 16px;
+    }
+
+    .pet-type {
+        color: Tomato;
+    }
+
+    .pet-breed {
+        color: RoyalBlue;
+    }
+
+    .pet-age {
+        color: MediumSeaGreen;
+    }
+</style>
+
+<h2>List</h2>
+
+@foreach (var pet in Model)
+{
+    <div class="card">
+        <div class="card-content">
+            <h2>@pet.PetName</h2>
+            <div class="pet-type">Type: @pet.PetType</div>
+            <div class="pet-breed">Breed: @pet.PetBreed</div>
+            <div class="pet-age">Age: @pet.PetAge</div>
+        </div>
+    </div>
+}

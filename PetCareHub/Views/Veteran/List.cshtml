@@ -1,0 +1,63 @@
+﻿@model IEnumerable<PetCareHub.Models.Veteran>
+@{
+    ViewBag.Title = "List";
+}
+
+<style>
+    body {
+        background-color: LavenderBlush;
+        font-family: Arial, sans-serif;
+    }
+
+    .card {
+        width: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: 0.3s;
+        display: inline-block;
+        vertical-align: top;
+        background-color: LightSkyBlue;
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+    .card-content {
+        padding: 20px;
+    }
+
+    .card h2 {
+        margin-top: 0;
+        color: DarkSlateGray;
+        font-size: 24px;
+    }
+
+    .card div {
+        margin-bottom: 10px;
+        color: DimGray;
+        font-size: 16px;
+    }
+
+    .veteran-name {
+        color: SteelBlue;
+    }
+
+    .veteran-place {
+        color: DarkCyan;
+    }
+</style>
+
+<h2>List</h2>
+
+@foreach (var veteran in Model)
+{
+    <div class="card">
+        <div class="card-content">
+            <h2>@veteran.VeteranName</h2>
+            <div class="veteran-place">Place: @veteran.VeteranPlace</div>
+        </div>
+    </div>
+}
